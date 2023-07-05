@@ -27,5 +27,8 @@ declare module 'styled-components/native' {
       iconXxSmall: number;
       iconXxxSmall: number;
     };
+    fonts: {
+      regular: string;
+    };
   }
 }
