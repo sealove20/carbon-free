@@ -4,7 +4,7 @@ const fontSize = {
   fontMain: 18,
   fontMedium: 16,
   fontSmall: 14,
-  fontXSmall: 12,
+  fontXSmall: 11,
   fontXXSmall: 10,
 };
 
@@ -22,4 +22,5 @@ const iconSize = {
 export default {
   ...fontSize,
   ...iconSize,
+  borderRadius: '8px',
 };

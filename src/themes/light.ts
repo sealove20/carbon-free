@@ -4,7 +4,7 @@ import colors from './colors';
 import sizes from './sizes';
 
 export const fonts = {
-  regular: 'MyriadPro-Regular',
+  regular: 'Sora_400Regular',
 };
 
 const light: DefaultTheme = {

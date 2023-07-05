@@ -6,7 +6,9 @@ declare module 'styled-components/native' {
       primary: string;
       white: string;
       black: string;
+      darkGray: string;
       gray: string;
+      lightGray: string;
       green: string;
     };
     space: {
@@ -26,6 +28,8 @@ declare module 'styled-components/native' {
       iconXSmall: number;
       iconXxSmall: number;
       iconXxxSmall: number;
+
+      borderRadius: string;
     };
     fonts: {
       regular: string;

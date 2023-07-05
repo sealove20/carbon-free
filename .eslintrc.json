@@ -24,7 +24,6 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error",
-    "react/jsx-curly-spacing": [2, {"when": "aways"}]
+    "prettier/prettier": "error"
   }
 }
