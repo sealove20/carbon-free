@@ -1,7 +1,13 @@
 import {styled} from 'styled-components/native';
+import {type RuleSet} from 'styled-components/native/dist/types';
 
-export const RootContainer = styled.View`
+interface RootContainerProps {
+  customStyle?: RuleSet;
+}
+
+export const RootContainer = styled.View<RootContainerProps>`
   width: 100%;
+  ${(props) => props.customStyle}
 `;
 
 export const TextInput = styled.TextInput.attrs(({theme}) => ({
@@ -28,5 +34,5 @@ export const Label = styled.Text`
 `;
 
 export const Icon = styled.View`
-  /* padding-right: 12px; */
+  padding-right: 12px;
 `;

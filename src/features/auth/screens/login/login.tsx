@@ -2,8 +2,13 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   FormContainer,
   InputContainer,
+  SignupLink,
   StyledSafeAreaView,
+  Text,
   Title,
+  emailStyle,
+  loginButtonStyle,
+  passwordStyle,
 } from './login.styles';
 import {Button} from '@components/Button/Button';
 import {AuthStackParamList} from '@navigation/auth-stack';
@@ -20,7 +25,7 @@ export function Login({navigation}: Props) {
       <Header />
       <Title onPress={() => navigation.navigate('Signup')}>Login</Title>
       <FormContainer>
-        <Form.Root>
+        <Form.Root customStyle={emailStyle}>
           <Form.Label label="E-mail" />
           <Form.Input
             onChangeText={() => null}
@@ -28,7 +33,7 @@ export function Login({navigation}: Props) {
             value=""
           />
         </Form.Root>
-        <Form.Root>
+        <Form.Root customStyle={passwordStyle}>
           <Form.Label label="Password" />
           <InputContainer>
             <Form.Input
@@ -36,10 +41,21 @@ export function Login({navigation}: Props) {
               placeholder="Minimum 8 characters"
               value=""
             />
-            {/* <Form.Icon name="eyeo" size={24} /> */}
+            <Form.Icon name="eyeo" size={24} />
           </InputContainer>
         </Form.Root>
-        <Button title="Login" onPress={() => null} />
+        <Button
+          title="Login"
+          onPress={() => null}
+          customStyle={loginButtonStyle}
+        />
+        <Text>
+          Don't have an account?{' '}
+          <SignupLink onPress={() => navigation.navigate('Signup')}>
+            Sign up
+          </SignupLink>{' '}
+          here
+        </Text>
       </FormContainer>
     </StyledSafeAreaView>
   );
