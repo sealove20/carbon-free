@@ -5,9 +5,10 @@ import {
   StyledSafeAreaView,
   Title,
 } from './login.styles';
-import {AuthStackParamList} from '../../../../navigation/auth-stack';
-import {Form} from '../../../../components/Input';
-import {Header} from '../../../../components/Header/Header';
+import {Button} from '@components/Button/Button';
+import {AuthStackParamList} from '@navigation/auth-stack';
+import {Header} from '@components/Header/Header';
+import {Form} from '@components/Input';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Login'>;
@@ -40,6 +41,7 @@ export function Login({navigation}: Props) {
             <Form.Icon name="eyeo" size={24} />
           </InputContainer>
         </Form.Root>
+        <Button title="Login" onPress={() => null} />
       </FormContainer>
     </StyledSafeAreaView>
   );

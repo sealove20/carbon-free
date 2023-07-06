@@ -1,6 +1,6 @@
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {StyledSafeAreaView, Title} from './signup.styles';
-import {AuthStackParamList} from '../../../../navigation/auth-stack';
+import {AuthStackParamList} from '@navigation/auth-stack';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Signup'>;
