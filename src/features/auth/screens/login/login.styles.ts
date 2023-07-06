@@ -15,15 +15,13 @@ export const Title = styled.Text`
 `;
 
 export const InputContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
   background-color: ${({theme}) => theme.colors.lightGray};
 `;
 
 export const FormContainer = styled.View`
   align-self: center;
   width: 80%;
-  /* margin-left: 25px; */
-  /* background-color: red; */
 `;

@@ -28,5 +28,5 @@ export const Label = styled.Text`
 `;
 
 export const Icon = styled.View`
-  padding-right: 12px;
+  /* padding-right: 12px; */
 `;

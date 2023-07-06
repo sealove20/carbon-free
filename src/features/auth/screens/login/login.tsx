@@ -26,7 +26,6 @@ export function Login({navigation}: Props) {
             onChangeText={() => null}
             placeholder="john@doe.com"
             value=""
-            label="E-mail"
           />
         </Form.Root>
         <Form.Root>
@@ -36,9 +35,8 @@ export function Login({navigation}: Props) {
               onChangeText={() => null}
               placeholder="Minimum 8 characters"
               value=""
-              label="Password"
             />
-            <Form.Icon name="eyeo" size={24} />
+            {/* <Form.Icon name="eyeo" size={24} /> */}
           </InputContainer>
         </Form.Root>
         <Button title="Login" onPress={() => null} />
