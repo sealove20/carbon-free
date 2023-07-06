@@ -26,9 +26,8 @@ export const FormContainer = styled.View`
   width: 80%;
 `;
 
-export const Text = styled.Text`
+export const textStyle = css`
   color: ${({theme}) => theme.colors.darkGray};
-  font-size: ${({theme}) => theme.space.fontXXSmall};
   margin-top: 13px;
   align-self: center;
 `;

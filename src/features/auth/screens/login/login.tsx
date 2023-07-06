@@ -4,16 +4,17 @@ import {
   InputContainer,
   SignupLink,
   StyledSafeAreaView,
-  Text,
   Title,
   emailStyle,
   loginButtonStyle,
   passwordStyle,
+  textStyle,
 } from './login.styles';
 import {Button} from '@components/Button/Button';
 import {AuthStackParamList} from '@navigation/auth-stack';
 import {Header} from '@components/Header/Header';
 import {Form} from '@components/Input';
+import Text from '@components/Text/Text';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Login'>;
@@ -49,7 +50,7 @@ export function Login({navigation}: Props) {
           onPress={() => null}
           customStyle={loginButtonStyle}
         />
-        <Text>
+        <Text customStyle={textStyle} size="fontXXSmall">
           Don't have an account?{' '}
           <SignupLink onPress={() => navigation.navigate('Signup')}>
             Sign up
