@@ -5,7 +5,8 @@ const fontSize = {
   fontMedium: 16,
   fontSmall: 14,
   fontXSmall: 11,
-  fontXXSmall: 10,
+  fontXXSmall: 12,
+  fontXXXSmall: 10,
 };
 
 const iconSize = {

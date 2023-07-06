@@ -19,6 +19,7 @@ declare module 'styled-components/native' {
       fontSmall: number;
       fontXSmall: number;
       fontXXSmall: number;
+      fontXXXSmall: number;
 
       iconXLarge: number;
       iconLarge: number;
