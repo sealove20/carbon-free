@@ -13,7 +13,7 @@ import {
 import {Button} from '@components/Button/Button';
 import {AuthStackParamList} from '@navigation/auth-stack';
 import {Header} from '@components/Header/Header';
-import {Form} from '@components/Input';
+import {Form} from '@components/Form';
 import Text from '@components/Text/Text';
 
 interface Props {
