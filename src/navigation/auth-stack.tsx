@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 export function AuthStack(): JSX.Element {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="Signup"
       screenOptions={{
         headerShown: false,
       }}
