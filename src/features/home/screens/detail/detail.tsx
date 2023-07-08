@@ -3,7 +3,6 @@ import {Image} from 'expo-image';
 
 import {
   BackButton,
-  ButtonsContainer,
   BuyButtonContainer,
   Content,
   HeaderContainer,
@@ -11,21 +10,12 @@ import {
   Percentage,
   PortifolioValue,
   PortifolioValueContainer,
-  RetireCredits,
-  SellButton,
   TipNotes,
-  YourPortifolio,
-  YourPortifolioContent,
-  YourPortifolioLastPurchased,
   fundAbreviation,
   fundTitle,
   fundYear,
-  lastPurchasedTextStyle,
   portifolioPercentage,
   portifolioValue,
-  previousRetiredText,
-  retireCreditsTextStyle,
-  sellButtonTextStyle,
   tipNotesText,
   tipNotesTextInformation,
 } from './detail.styles';
@@ -39,6 +29,8 @@ import {Button} from '@components/Button/Button';
 import {Chart} from '@features/home/components/Chart/Chart';
 import {InfoAndStatsContainer} from '@features/home/components/InfoAndStats/infoAndStats.styles';
 import {FundBreakdown} from '@features/home/components/FundBreakdown/FundBreakdown';
+import {YourPortifolio} from '@features/home/components/YourPortifolio/YourPortifolio';
+import {light} from '@themes/light';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
@@ -63,7 +55,11 @@ export function Detail({navigation}: Props) {
           <PortifolioValue>
             <Text customStyle={portifolioValue}>$1,245.23</Text>
             <Percentage>
-              <Feather name="arrow-up-right" size={24} color="green" />
+              <Feather
+                name="arrow-up-right"
+                size={24}
+                color={light.colors.green}
+              />
               <Text customStyle={portifolioPercentage}>31.82%</Text>
             </Percentage>
           </PortifolioValue>
@@ -73,36 +69,7 @@ export function Detail({navigation}: Props) {
         <InfoAndStatsContainer />
         <FundBreakdown />
 
-        <YourPortifolio>
-          <Feather name="pie-chart" size={24} color="black" />
-          <Text>Your Portifolio</Text>
-          <YourPortifolioContent>
-            <PortifolioValue>
-              <Text customStyle={portifolioValue}>18 credits</Text>
-              <Percentage>
-                <Feather name="arrow-up-right" size={24} color="green" />
-                <Text customStyle={portifolioPercentage}>8.41%</Text>
-              </Percentage>
-            </PortifolioValue>
-            <YourPortifolioLastPurchased>
-              <Text customStyle={fundYear}>$328.14</Text>
-              <Text customStyle={lastPurchasedTextStyle}>
-                Last purchase 28d ago
-              </Text>
-            </YourPortifolioLastPurchased>
-          </YourPortifolioContent>
-          <ButtonsContainer>
-            <SellButton>
-              <Text customStyle={sellButtonTextStyle}>Sell</Text>
-            </SellButton>
-            <RetireCredits>
-              <Text customStyle={retireCreditsTextStyle}>Retire credits</Text>
-            </RetireCredits>
-          </ButtonsContainer>
-          <Text customStyle={previousRetiredText}>
-            You've previously retired 28 credits of this asset
-          </Text>
-        </YourPortifolio>
+        <YourPortifolio />
         <TipNotes>
           <Text customStyle={tipNotesText}>
             Please note that prices are for reference only and may vary at the
