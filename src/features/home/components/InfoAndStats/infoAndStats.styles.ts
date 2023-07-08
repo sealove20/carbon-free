@@ -6,7 +6,7 @@ export const InfoAndStatsContainer = styled.View`
 
 export const GroupInfoContainer = styled.View``;
 
-export const GroupContainer = styled.View`
+export const InfoLayoutContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;

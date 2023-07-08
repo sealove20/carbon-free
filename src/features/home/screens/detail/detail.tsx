@@ -27,6 +27,7 @@ import {FundBreakdown} from '@features/home/components/FundBreakdown/FundBreakdo
 import {YourPortifolio} from '@features/home/components/YourPortifolio/YourPortifolio';
 import {light} from '@themes/light';
 import {TipNotes} from '@features/home/components/TipNotes/TipNotes';
+import {InfoAndStats} from '@features/home/components/InfoAndStats/InfoAndStats';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
@@ -62,7 +63,7 @@ export function Detail({navigation}: Props) {
           <Text customStyle={fundYear}>2022</Text>
         </PortifolioValueContainer>
         <Chart />
-        <InfoAndStatsContainer />
+        <InfoAndStats />
         <FundBreakdown />
         <YourPortifolio />
         <TipNotes />
