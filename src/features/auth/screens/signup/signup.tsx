@@ -68,7 +68,7 @@ export function Signup({navigation}: Props) {
         </Form.Root>
         <CheckboxContainer>
           <Checkbox value={false} onValueChange={() => {}} />
-          <Text customStyle={privacyText} size="fontXXSmall">
+          <Text customStyle={privacyText} size="fontXSmall">
             I am over 18 years of age and I have read and agree to the Terms of
             Service and Privacy policy.
           </Text>
@@ -78,7 +78,7 @@ export function Signup({navigation}: Props) {
           onPress={() => null}
           customStyle={loginButtonStyle}
         />
-        <Text customStyle={textStyle} size="fontXXSmall">
+        <Text customStyle={textStyle} size="fontXSmall">
           Already have an account?{' '}
           <SignupLink onPress={() => navigation.navigate('Login')}>
             Log in Here

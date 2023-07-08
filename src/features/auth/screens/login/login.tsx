@@ -50,7 +50,7 @@ export function Login({navigation}: Props) {
           onPress={() => null}
           customStyle={loginButtonStyle}
         />
-        <Text customStyle={textStyle} size="fontXXSmall">
+        <Text customStyle={textStyle} size="fontXSmall">
           Don't have an account?{' '}
           <SignupLink onPress={() => navigation.navigate('Signup')}>
             Sign up
