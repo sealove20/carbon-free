@@ -1,4 +1,3 @@
-import Text from '@components/Text/Text';
 import {Image} from 'expo-image';
 import {styled, css} from 'styled-components/native';
 
@@ -88,58 +87,6 @@ export const Percentage = styled.View`
 
 export const PortifolioValue = styled.View``;
 
-export const ChartContainer = styled.View``;
-
-export const ChatFilter = styled.View`
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 20px 20px 0 20px;
-`;
-export const ChatFilterItem = styled.View`
-  align-items: center;
-  justify-content: center;
-  height: 35px;
-  width: 35px;
-`;
-
-export const chartFilterItemStyle = css`
-  color: ${({theme}) => theme.colors.darkGray};
-`;
-
-export const ChatFilterItemText = styled(Text).attrs({
-  customStyle: chartFilterItemStyle,
-})`
-  font-size: ${({theme}) => theme.space.fontMedium}px;
-`;
-
-export const ActiveItem = styled.View`
-  align-items: center;
-  justify-content: center;
-  background-color: ${({theme}) => theme.colors.lightPurple};
-  height: 35px;
-  width: 35px;
-  border-radius: 4px;
-`;
-
-export const InfoAndStats = styled.View`
-  margin: 20px 20px 0 20px;
-`;
-
-export const InfoContainer = styled.View`
-  margin-top: 11px;
-`;
-
-export const GroupInfoContainer = styled.View``;
-export const GroupContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const ContentContainer = styled.View`
-  flex-direction: row;
-  align-items: baseline;
-`;
-
 export const FundBreakdown = styled.View`
   margin: 20px 20px 0 20px;
 `;
@@ -148,21 +95,6 @@ export const FundBreakdownContent = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
-`;
-
-export const infoAndStatsTitle = css`
-  font-size: ${({theme}) => theme.space.fontMain}px;
-  font-weight: 800;
-`;
-
-export const infoTitle = css`
-  font-size: ${({theme}) => theme.space.fontSmall}px;
-  color: ${({theme}) => theme.colors.darkGray};
-  margin-right: 2px;
-`;
-
-export const infoContent = css`
-  font-size: ${({theme}) => theme.space.fontSmall}px;
 `;
 
 export const portifolioValue = css`
@@ -193,11 +125,6 @@ export const portifolioPercentage = css`
 export const fundYear = css`
   font-size: ${({theme}) => theme.space.fontXLarge}px;
   font-weight: 800;
-`;
-
-export const activeItemStyle = css`
-  color: ${({theme}) => theme.colors.primary};
-  font-size: ${({theme}) => theme.space.fontMedium}px;
 `;
 
 export const fundBreakdownTitle = css`
@@ -282,4 +209,10 @@ export const tipNotesTextInformation = css`
 
 export const BuyButtonContainer = styled.View`
   margin: 20px;
+`;
+
+export const lastPurchasedTextStyle = css`
+  font-size: ${({theme}) => theme.space.fontSmall}px;
+  color: ${({theme}) => theme.colors.darkGray};
+  margin-right: 2px;
 `;

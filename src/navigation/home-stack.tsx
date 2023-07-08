@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<FundDetailStackParamList>();
 export function HomeStack(): JSX.Element {
   return (
     <Stack.Navigator
-      initialRouteName="Dashboard"
+      initialRouteName="Detail"
       screenOptions={{
         headerShown: false,
       }}

@@ -2,27 +2,17 @@ import {StyledSafeAreaView} from '@features/auth/screens/login/login.styles';
 import {Image} from 'expo-image';
 
 import {
-  ActiveItem,
   BackButton,
   ButtonsContainer,
   BuyButtonContainer,
   CardContentContainer,
   CardImage,
-  ChartContainer,
-  ChatFilter,
-  ChatFilterItem,
-  ChatFilterItemText,
   Content,
-  ContentContainer,
   FundBreakdown,
   FundBreakdownContent,
-  GroupContainer,
-  GroupInfoContainer,
   HeaderContainer,
   HeaderTitleContainer,
   HighlightedCards,
-  InfoAndStats,
-  InfoContainer,
   LogoImage,
   Percentage,
   PortifolioValue,
@@ -33,7 +23,6 @@ import {
   YourPortifolio,
   YourPortifolioContent,
   YourPortifolioLastPurchased,
-  activeItemStyle,
   cardStyle,
   cardText,
   fundAbreviation,
@@ -43,9 +32,7 @@ import {
   fundYear,
   highlighted,
   highlightedCardSpacing,
-  infoAndStatsTitle,
-  infoContent,
-  infoTitle,
+  lastPurchasedTextStyle,
   portifolioPercentage,
   portifolioTitle,
   portifolioValue,
@@ -64,7 +51,8 @@ import {FundDetailStackParamList} from '@navigation/home-stack';
 import {Card} from '@components/Card/Card';
 import {useAssets} from 'expo-asset';
 import {Button} from '@components/Button/Button';
-import DetailChart from '@features/home/assets/DetailChart';
+import {Chart} from '@features/home/components/Chart/Chart';
+import {InfoAndStatsContainer} from '@features/home/components/InfoAndStats/infoAndStats.styles';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
@@ -106,80 +94,8 @@ export function Detail({navigation}: Props) {
           </PortifolioValue>
           <Text customStyle={fundYear}>2022</Text>
         </PortifolioValueContainer>
-        <ChartContainer>
-          <DetailChart />
-          <ChatFilter>
-            <ChatFilterItem>
-              <ChatFilterItemText>1h</ChatFilterItemText>
-            </ChatFilterItem>
-            <ActiveItem>
-              <Text customStyle={activeItemStyle}>1d</Text>
-            </ActiveItem>
-            <ChatFilterItem>
-              <ChatFilterItemText>1w</ChatFilterItemText>
-            </ChatFilterItem>
-            <ChatFilterItem>
-              <ChatFilterItemText>1m</ChatFilterItemText>
-            </ChatFilterItem>
-            <ChatFilterItem>
-              <ChatFilterItemText>1y</ChatFilterItemText>
-            </ChatFilterItem>
-            <ChatFilterItem>
-              <ChatFilterItemText>all</ChatFilterItemText>
-            </ChatFilterItem>
-          </ChatFilter>
-        </ChartContainer>
-        <InfoAndStats>
-          <Text customStyle={infoAndStatsTitle}>Info & Stats</Text>
-          <GroupContainer>
-            <GroupInfoContainer>
-              <InfoContainer>
-                <ContentContainer>
-                  <Text customStyle={infoTitle}>AUM</Text>
-                  <Feather name="info" size={14} color="gray" />
-                </ContentContainer>
-                <Text customStyle={infoContent}>$430.88m</Text>
-              </InfoContainer>
-              <InfoContainer>
-                <ContentContainer>
-                  <Text customStyle={infoTitle}>Vintage Range</Text>
-                  <Feather name="info" size={14} color="gray" />
-                </ContentContainer>
-                <Text customStyle={infoContent}>2019 – 2022</Text>
-              </InfoContainer>
-              <InfoContainer>
-                <ContentContainer>
-                  <Text customStyle={infoTitle}>Price at Close</Text>
-                  <Feather name="info" size={14} color="gray" />
-                </ContentContainer>
-                <Text customStyle={infoContent}>$17.68</Text>
-              </InfoContainer>
-            </GroupInfoContainer>
-            <GroupInfoContainer>
-              <InfoContainer>
-                <ContentContainer>
-                  <Text customStyle={infoTitle}>Issue Date</Text>
-                  <Feather name="info" size={14} color="gray" />
-                </ContentContainer>
-                <Text customStyle={infoContent}>18/04/2022</Text>
-              </InfoContainer>
-              <InfoContainer>
-                <ContentContainer>
-                  <Text customStyle={infoTitle}>TER</Text>
-                  <Feather name="info" size={14} color="gray" />
-                </ContentContainer>
-                <Text customStyle={infoContent}>0.15%</Text>
-              </InfoContainer>
-              <InfoContainer>
-                <ContentContainer>
-                  <Text customStyle={infoTitle}>Price at Open</Text>
-                  <Feather name="info" size={14} color="gray" />
-                </ContentContainer>
-                <Text customStyle={infoContent}>$17.74</Text>
-              </InfoContainer>
-            </GroupInfoContainer>
-          </GroupContainer>
-        </InfoAndStats>
+        <Chart />
+        <InfoAndStatsContainer />
         <FundBreakdown>
           <Text customStyle={fundBreakdownTitle}>Fund Breakdown</Text>
           <FundBreakdownContent>
@@ -296,7 +212,9 @@ export function Detail({navigation}: Props) {
             </PortifolioValue>
             <YourPortifolioLastPurchased>
               <Text customStyle={fundYear}>$328.14</Text>
-              <Text customStyle={infoTitle}>Last purchase 28d ago</Text>
+              <Text customStyle={lastPurchasedTextStyle}>
+                Last purchase 28d ago
+              </Text>
             </YourPortifolioLastPurchased>
           </YourPortifolioContent>
           <ButtonsContainer>
