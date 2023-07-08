@@ -5,15 +5,9 @@ import {
   BackButton,
   ButtonsContainer,
   BuyButtonContainer,
-  CardContentContainer,
-  CardImage,
   Content,
-  FundBreakdown,
-  FundBreakdownContent,
   HeaderContainer,
   HeaderTitleContainer,
-  HighlightedCards,
-  LogoImage,
   Percentage,
   PortifolioValue,
   PortifolioValueContainer,
@@ -23,21 +17,13 @@ import {
   YourPortifolio,
   YourPortifolioContent,
   YourPortifolioLastPurchased,
-  cardStyle,
-  cardText,
   fundAbreviation,
-  fundBreakdownText,
-  fundBreakdownTitle,
   fundTitle,
   fundYear,
-  highlighted,
-  highlightedCardSpacing,
   lastPurchasedTextStyle,
   portifolioPercentage,
-  portifolioTitle,
   portifolioValue,
   previousRetiredText,
-  readMore,
   retireCreditsTextStyle,
   sellButtonTextStyle,
   tipNotesText,
@@ -49,27 +35,16 @@ import {Feather} from '@expo/vector-icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {FundDetailStackParamList} from '@navigation/home-stack';
 import {Card} from '@components/Card/Card';
-import {useAssets} from 'expo-asset';
 import {Button} from '@components/Button/Button';
 import {Chart} from '@features/home/components/Chart/Chart';
 import {InfoAndStatsContainer} from '@features/home/components/InfoAndStats/infoAndStats.styles';
+import {FundBreakdown} from '@features/home/components/FundBreakdown/FundBreakdown';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
 }
 
 export function Detail({navigation}: Props) {
-  const [assets, error] = useAssets([
-    require('../../../../../assets/aspira.png'),
-    require('../../../../../assets/climeworks.png'),
-    require('../../../../../assets/sustaera.png'),
-    require('../../../../../assets/KrOneThailand.png'),
-    require('../../../../../assets/landscape.png'),
-    require('../../../../../assets/plant.png'),
-    require('../../../../../assets/ceramic.png'),
-    require('../../../../../assets/windTurbine.png'),
-  ]);
-
   return (
     <StyledSafeAreaView>
       <Header>
@@ -96,109 +71,8 @@ export function Detail({navigation}: Props) {
         </PortifolioValueContainer>
         <Chart />
         <InfoAndStatsContainer />
-        <FundBreakdown>
-          <Text customStyle={fundBreakdownTitle}>Fund Breakdown</Text>
-          <FundBreakdownContent>
-            <Text customStyle={highlighted}>Highlighted</Text>
-            <Text customStyle={fundBreakdownText}>Value</Text>
-            <Text customStyle={fundBreakdownText}>Vintage</Text>
-            <Text customStyle={fundBreakdownText}>Registry</Text>
-          </FundBreakdownContent>
-          <HighlightedCards>
-            <Card customStyle={cardStyle}>
-              {assets ? (
-                <CardImage
-                  source={assets[4]}
-                  contentFit="cover"
-                  transition={1000}
-                />
-              ) : null}
-              <CardContentContainer>
-                {assets ? (
-                  <LogoImage
-                    source={assets[0]}
-                    contentFit="cover"
-                    transition={1000}
-                  />
-                ) : null}
-                <Text customStyle={cardText}>
-                  Aspira is building a modular, direct air capture system with
-                  the energy supply integrated into the modules.
-                </Text>
-                <Text customStyle={readMore}>Read more</Text>
-              </CardContentContainer>
-            </Card>
-            <Card customStyle={[cardStyle, highlightedCardSpacing]}>
-              {assets ? (
-                <CardImage
-                  source={assets[5]}
-                  contentFit="cover"
-                  transition={1000}
-                />
-              ) : null}
-              <CardContentContainer>
-                {assets ? (
-                  <LogoImage
-                    source={assets[1]}
-                    contentFit="cover"
-                    transition={1000}
-                  />
-                ) : null}
-                <Text customStyle={cardText}>
-                  uses renewable geothermal energy and waste heat to capture CO₂
-                  directly from the air.
-                </Text>
-                <Text customStyle={readMore}>Read more</Text>
-              </CardContentContainer>
-            </Card>
-            <Card customStyle={[cardStyle, highlightedCardSpacing]}>
-              {assets ? (
-                <CardImage
-                  source={assets[6]}
-                  contentFit="cover"
-                  transition={1000}
-                />
-              ) : null}
-              <CardContentContainer>
-                {assets ? (
-                  <LogoImage
-                    source={assets[2]}
-                    contentFit="cover"
-                    transition={1000}
-                  />
-                ) : null}
-                <Text customStyle={cardText}>
-                  Sustaera uses ceramic monolith air contactors to capture CO₂
-                  directly from the air for permanent storage.
-                </Text>
-                <Text customStyle={readMore}>Read more</Text>
-              </CardContentContainer>
-            </Card>
-            <Card customStyle={[cardStyle, highlightedCardSpacing]}>
-              {assets ? (
-                <CardImage
-                  source={assets[7]}
-                  contentFit="cover"
-                  transition={1000}
-                />
-              ) : null}
-              <CardContentContainer>
-                {assets ? (
-                  <LogoImage
-                    source={assets[3]}
-                    contentFit="cover"
-                    transition={1000}
-                  />
-                ) : null}
-                <Text customStyle={cardText}>
-                  The project consists of 30 Wind Turbine Generators (WTGs) of
-                  3.0 MW capacities each.
-                </Text>
-                <Text customStyle={readMore}>Read more</Text>
-              </CardContentContainer>
-            </Card>
-          </HighlightedCards>
-        </FundBreakdown>
+        <FundBreakdown />
+
         <YourPortifolio>
           <Feather name="pie-chart" size={24} color="black" />
           <Text>Your Portifolio</Text>
