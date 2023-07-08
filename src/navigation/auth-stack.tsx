@@ -1,6 +1,6 @@
+import {Login} from '@features/auth/screens/login/login';
+import {Signup} from '@features/auth/screens/signup/signup';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login} from '../features/auth/screens/login/login';
-import {Signup} from '../features/auth/screens/signup/signup';
 
 export type AuthStackParamList = {
   Login: undefined;
@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 export function AuthStack(): JSX.Element {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="Signup"
       screenOptions={{
         headerShown: false,
       }}

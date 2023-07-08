@@ -2,12 +2,19 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   FormContainer,
   InputContainer,
+  SignupLink,
   StyledSafeAreaView,
   Title,
+  emailStyle,
+  loginButtonStyle,
+  passwordStyle,
+  textStyle,
 } from './login.styles';
-import {AuthStackParamList} from '../../../../navigation/auth-stack';
-import {Form} from '../../../../components/Input';
-import {Header} from '../../../../components/Header/Header';
+import {Button} from '@components/Button/Button';
+import {AuthStackParamList} from '@navigation/auth-stack';
+import {Header} from '@components/Header/Header';
+import {Form} from '@components/Form';
+import Text from '@components/Text/Text';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Login'>;
@@ -19,27 +26,37 @@ export function Login({navigation}: Props) {
       <Header />
       <Title onPress={() => navigation.navigate('Signup')}>Login</Title>
       <FormContainer>
-        <Form.Root>
+        <Form.Root customStyle={emailStyle}>
           <Form.Label label="E-mail" />
           <Form.Input
             onChangeText={() => null}
             placeholder="john@doe.com"
             value=""
-            label="E-mail"
           />
         </Form.Root>
-        <Form.Root>
+        <Form.Root customStyle={passwordStyle}>
           <Form.Label label="Password" />
           <InputContainer>
             <Form.Input
               onChangeText={() => null}
               placeholder="Minimum 8 characters"
               value=""
-              label="Password"
             />
             <Form.Icon name="eyeo" size={24} />
           </InputContainer>
         </Form.Root>
+        <Button
+          title="Login"
+          onPress={() => null}
+          customStyle={loginButtonStyle}
+        />
+        <Text customStyle={textStyle} size="fontXSmall">
+          Don't have an account?{' '}
+          <SignupLink onPress={() => navigation.navigate('Signup')}>
+            Sign up
+          </SignupLink>{' '}
+          here
+        </Text>
       </FormContainer>
     </StyledSafeAreaView>
   );

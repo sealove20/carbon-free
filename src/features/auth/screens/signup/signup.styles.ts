@@ -1,4 +1,4 @@
-import {styled} from 'styled-components/native';
+import {styled, css} from 'styled-components/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const StyledSafeAreaView = styled(SafeAreaView)`
@@ -9,9 +9,26 @@ export const StyledSafeAreaView = styled(SafeAreaView)`
 `;
 
 export const Title = styled.Text`
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
   color: ${({theme}) => theme.colors.black};
   font-size: ${({theme}) => theme.space.fontLarge}px;
-  font-weight: bold;
+  font-weight: 600;
+`;
+
+export const FormContainer = styled.ScrollView.attrs({
+  contentContainerStyle: {},
+})`
+  align-self: center;
+  width: 80%;
+`;
+
+export const CheckboxContainer = styled.View`
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 19px;
+`;
+
+export const privacyText = css`
+  color: ${({theme}) => theme.colors.darkGray};
+  width: 90%;
 `;

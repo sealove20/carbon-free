@@ -1,11 +1,13 @@
 const fontSize = {
-  fontXLarge: 32,
+  fontXXLarge: 32,
+  fontXLarge: 24,
   fontLarge: 22,
   fontMain: 18,
   fontMedium: 16,
   fontSmall: 14,
-  fontXSmall: 11,
-  fontXXSmall: 10,
+  fontXSmall: 12,
+  fontXXSmall: 11,
+  fontXXXSmall: 10,
 };
 
 const iconSize = {
