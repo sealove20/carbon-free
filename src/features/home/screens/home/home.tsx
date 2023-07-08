@@ -88,7 +88,6 @@ export function Home({navigation}: Props) {
             <WindChart />
           </HomeCard>
           <HomeCard
-            positive
             iconName="sun"
             colorName="orange"
             value="986.61"

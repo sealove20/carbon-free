@@ -25,10 +25,10 @@ export const CardPercentageContainer = styled.View`
   margin-left: 5px;
 `;
 
-export const cardPercentage = css<cardPercentageProps>`
+export const CardPercentage = styled.Text<cardPercentageProps>`
   font-size: ${({theme}) => theme.space.fontSmall}px;
-  color: ${(props) =>
-    props.positive ? props.theme.colors.green : props.theme.colors.red};
+  color: ${({positive, theme}) =>
+    positive ? theme.colors.green : theme.colors.red};
   margin-left: 5px;
 `;
 

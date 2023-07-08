@@ -5,13 +5,14 @@ import Text from '@components/Text/Text';
 import {Feather} from '@expo/vector-icons';
 import {
   CardContent,
-  cardPercentage,
+  CardPercentage,
   CardPercentageContainer,
   cardTitle,
   cardValue,
   HomeCardContainer,
 } from './homeCard.styles';
 import {Card} from '@components/Card/Card';
+import {light} from '@themes/light';
 
 interface Props {
   children?: ReactNode;
@@ -27,7 +28,7 @@ interface Props {
 
 export function HomeCard({
   children,
-  positive,
+  positive = false,
   iconName,
   colorName,
   percentage,
@@ -48,9 +49,9 @@ export function HomeCard({
             <Feather
               name={positive ? 'arrow-up-right' : 'arrow-down-right'}
               size={18}
-              color={positive ? 'green' : 'red'}
+              color={positive ? light.colors.green : light.colors.red}
             />
-            <Text customStyle={cardPercentage}>{percentage}%</Text>
+            <CardPercentage positive={positive}>{percentage}%</CardPercentage>
           </CardPercentageContainer>
         </CardContent>
       </HomeCardContainer>
