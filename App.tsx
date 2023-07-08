@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {ThemeProvider} from 'styled-components';
 import {light} from './src/themes/light';
 import {AuthStack} from './src/navigation/auth-stack';
+import {HomeTab} from '@navigation/home-tab';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -15,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <ThemeProvider theme={light}>
-        <AuthStack />
+        {true ? <HomeTab /> : <AuthStack />}
       </ThemeProvider>
     </NavigationContainer>
   );
