@@ -29,13 +29,13 @@ import {
 } from './home.styles';
 import {EarRewards} from '@features/home/components/EarRewards/EarRewards';
 import {HomeCard} from '@features/home/components/HomeCard/HomeCard';
-import EnergyChart from '@features/home/components/Chart/EnergyChart';
-import BI from '@features/home/components/Chart/BI';
 import {InvestCard} from '@features/home/components/InvestCard/InvestCard';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {FundDetailStackParamList} from '@navigation/home-stack';
-import WindChart from '@features/home/components/Chart/WindChart';
-import SolarChart from '@features/home/components/Chart/SolarChart';
+import WindChart from '@features/home/assets/WindChart';
+import SolarChart from '@features/home/assets/SolarChart';
+import EnergyChart from '@features/home/assets/EnergyChart';
+import BI from '@features/home/assets/BI';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;

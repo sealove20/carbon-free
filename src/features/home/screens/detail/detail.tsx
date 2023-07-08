@@ -61,10 +61,10 @@ import Text from '@components/Text/Text';
 import {Feather} from '@expo/vector-icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {FundDetailStackParamList} from '@navigation/home-stack';
-import DetailChart from '@features/home/components/Chart/DetailChart';
 import {Card} from '@components/Card/Card';
 import {useAssets} from 'expo-asset';
 import {Button} from '@components/Button/Button';
+import DetailChart from '@features/home/assets/DetailChart';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
