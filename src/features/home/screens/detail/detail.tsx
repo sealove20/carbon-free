@@ -1,5 +1,4 @@
 import {StyledSafeAreaView} from '@features/auth/screens/login/login.styles';
-import {Image} from 'expo-image';
 
 import {
   BackButton,
@@ -10,27 +9,24 @@ import {
   Percentage,
   PortifolioValue,
   PortifolioValueContainer,
-  TipNotes,
   fundAbreviation,
   fundTitle,
   fundYear,
   portifolioPercentage,
   portifolioValue,
-  tipNotesText,
-  tipNotesTextInformation,
 } from './detail.styles';
 import {Header} from '@components/Header/Header';
 import Text from '@components/Text/Text';
 import {Feather} from '@expo/vector-icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {FundDetailStackParamList} from '@navigation/home-stack';
-import {Card} from '@components/Card/Card';
 import {Button} from '@components/Button/Button';
 import {Chart} from '@features/home/components/Chart/Chart';
 import {InfoAndStatsContainer} from '@features/home/components/InfoAndStats/infoAndStats.styles';
 import {FundBreakdown} from '@features/home/components/FundBreakdown/FundBreakdown';
 import {YourPortifolio} from '@features/home/components/YourPortifolio/YourPortifolio';
 import {light} from '@themes/light';
+import {TipNotes} from '@features/home/components/TipNotes/TipNotes';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
@@ -68,18 +64,8 @@ export function Detail({navigation}: Props) {
         <Chart />
         <InfoAndStatsContainer />
         <FundBreakdown />
-
         <YourPortifolio />
-        <TipNotes>
-          <Text customStyle={tipNotesText}>
-            Please note that prices are for reference only and may vary at the
-            time of excecuting a buy or sell order.
-          </Text>
-          <Text customStyle={tipNotesTextInformation}>
-            The information provided is not investment advice, and should not be
-            used as a recommendation to buy or sell assets.
-          </Text>
-        </TipNotes>
+        <TipNotes />
         <BuyButtonContainer>
           <Button onPress={() => {}} title="Buy" />
         </BuyButtonContainer>
