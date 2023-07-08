@@ -16,7 +16,7 @@ import {Card} from '@components/Card/Card';
 interface Props {
   children?: ReactNode;
   positive?: boolean;
-  iconName: string;
+  iconName: keyof typeof Feather.glyphMap;
   colorName: string;
   value: string;
   percentage: string;
