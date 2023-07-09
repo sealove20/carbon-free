@@ -6,7 +6,8 @@
       "@components/*": ["src/components/*"],
       "@features/*": ["src/features/*"],
       "@themes/*": ["src/themes/*"],
-      "@navigation/*": ["src/navigation/*"]
+      "@navigation/*": ["src/navigation/*"],
+      "@redux/*": ["src/redux/*"]
     }
   },
   "extends": "expo/tsconfig.base"

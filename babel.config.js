@@ -13,6 +13,7 @@ module.exports = function (api) {
             '@features': './src/features',
             '@themes': './src/themes',
             '@navigation': './src/navigation',
+            '@redux': './src/redux',
           },
         },
       ],
