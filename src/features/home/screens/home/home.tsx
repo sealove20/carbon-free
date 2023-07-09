@@ -101,7 +101,14 @@ export function Home({navigation}: Props) {
             value="1032.23"
             title="Wind Fund"
             percentage="3.51"
-            onPress={() => navigation.navigate('Detail')}
+            onPress={() =>
+              navigation.navigate('Detail', {
+                title: 'Wind Fund',
+                abvTitle: 'WFND',
+                value: '1032.23',
+                percentage: '3.51',
+              })
+            }
           >
             <WindChart />
           </HomeCard>
@@ -112,6 +119,14 @@ export function Home({navigation}: Props) {
             title="Solar Fund"
             percentage="0.13"
             customStyle={homeCardStyle}
+            onPress={() =>
+              navigation.navigate('Detail', {
+                title: 'Solar Fund',
+                abvTitle: 'SFND',
+                value: '986.61',
+                percentage: '0.13',
+              })
+            }
           >
             <SolarChart />
           </HomeCard>
@@ -123,6 +138,14 @@ export function Home({navigation}: Props) {
             title="Energy Fund"
             percentage="4"
             customStyle={homeCardStyle}
+            onPress={() =>
+              navigation.navigate('Detail', {
+                title: 'Energy Fund',
+                abvTitle: 'EFND',
+                value: '1122.95',
+                percentage: '4',
+              })
+            }
           >
             <EnergyChart />
           </HomeCard>

@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type FundDetailStackParamList = {
   Dashboard: undefined;
-  Detail: undefined;
+  Detail: {title: string; abvTitle: string; value: string; percentage: string};
 };
 
 const Stack = createNativeStackNavigator<FundDetailStackParamList>();
