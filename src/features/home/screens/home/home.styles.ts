@@ -65,6 +65,17 @@ export const AccoutValueContainer = styled.View`
   flex-direction: row;
 `;
 
+export const LogoutContainer = styled.TouchableOpacity`
+  flex-direction: row;
+  width: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+`;
+
+export const logoutText = css`
+  color: ${({theme}) => theme.colors.primary};
+`;
+
 export const portifolioTitle = css`
   font-size: ${({theme}) => theme.space.fontXSmall}px;
 `;

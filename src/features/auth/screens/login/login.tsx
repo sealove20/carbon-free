@@ -12,20 +12,24 @@ import {
   textStyle,
 } from './login.styles';
 import {Button} from '@components/Button/Button';
-import {AuthStackParamList} from '@navigation/auth-stack';
+import {AuthStackParamList} from '@navigation/authStack';
 import {Header} from '@components/Header/Header';
 import {Form} from '@components/Form';
 import Text from '@components/Text/Text';
 import {useState} from 'react';
+import {useAuth} from '@features/auth/hooks/useAuth';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Login'>;
 }
 
 export function Login({navigation}: Props) {
+  const {handleLogin} = useAuth();
+
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [isPasswordSecure, setIsPasswordSecure] = useState(true);
+
   return (
     <StyledSafeAreaView>
       <Header />
@@ -57,7 +61,7 @@ export function Login({navigation}: Props) {
         </Form.Root>
         <Button
           title="Login"
-          onPress={() => null}
+          onPress={() => handleLogin()}
           customStyle={loginButtonStyle}
         />
         <Text customStyle={textStyle} size="fontXSmall">

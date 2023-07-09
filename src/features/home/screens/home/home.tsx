@@ -13,6 +13,7 @@ import {
   Content,
   HeaderContainer,
   InvestCardContainer,
+  LogoutContainer,
   Percentage,
   Portifolio,
   PortifolioValue,
@@ -24,6 +25,7 @@ import {
   homeCardStyle,
   investCardStyle,
   investCardTitle,
+  logoutText,
   portifolioPercentage,
   portifolioTitle,
   portifolioValue,
@@ -32,22 +34,32 @@ import {EarRewards} from '@features/home/components/EarRewards/EarRewards';
 import {HomeCard} from '@features/home/components/HomeCard/HomeCard';
 import {InvestCard} from '@features/home/components/InvestCard/InvestCard';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {FundDetailStackParamList} from '@navigation/home-stack';
+import {FundDetailStackParamList} from '@navigation/homeStack';
 import WindChart from '@features/home/assets/WindChart';
 import SolarChart from '@features/home/assets/SolarChart';
 import EnergyChart from '@features/home/assets/EnergyChart';
 import BI from '@features/home/assets/BI';
 import {light} from '@themes/light';
-
+import {useAuth} from '@features/auth/hooks/useAuth';
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
 }
 
 export function Home({navigation}: Props) {
+  const {handleLogout} = useAuth();
+
   return (
     <StyledSafeAreaView>
       <Header>
         <HeaderContainer>
+          <LogoutContainer onPress={() => handleLogout()}>
+            <MaterialIcons
+              name="logout"
+              size={24}
+              color={light.colors.primary}
+            />
+            <Text customStyle={logoutText}>Logout</Text>
+          </LogoutContainer>
           <Account>
             <AntDesign name="user" size={24} color="black" />
             <AccoutValueContainer>

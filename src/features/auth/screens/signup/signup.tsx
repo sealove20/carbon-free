@@ -7,7 +7,7 @@ import {
   Title,
   privacyText,
 } from './signup.styles';
-import {AuthStackParamList} from '@navigation/auth-stack';
+import {AuthStackParamList} from '@navigation/authStack';
 import {Header} from '@components/Header/Header';
 import {
   InputContainer,
@@ -22,12 +22,15 @@ import {Form} from '@components/Form';
 import {Button} from '@components/Button/Button';
 import Text from '@components/Text/Text';
 import {useState} from 'react';
+import {useAuth} from '@features/auth/hooks/useAuth';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Signup'>;
 }
 
 export function Signup({navigation}: Props) {
+  const {handleLogin} = useAuth();
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -92,7 +95,7 @@ export function Signup({navigation}: Props) {
         </CheckboxContainer>
         <Button
           title="Create account"
-          onPress={() => null}
+          onPress={() => handleLogin()}
           customStyle={loginButtonStyle}
         />
         <Text customStyle={textStyle} size="fontXSmall">

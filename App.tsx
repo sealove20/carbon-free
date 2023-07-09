@@ -1,9 +1,9 @@
 import {useFonts, Sora_400Regular} from '@expo-google-fonts/sora';
-import {NavigationContainer} from '@react-navigation/native';
 import {ThemeProvider} from 'styled-components';
 import {light} from './src/themes/light';
-import {AuthStack} from './src/navigation/auth-stack';
-import {HomeTab} from '@navigation/home-tab';
+import {Provider, useSelector} from 'react-redux';
+import {store} from './src/redux/store/store';
+import AppRoute from '@navigation/AppRoute';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -14,10 +14,10 @@ export default function App() {
     return null;
   }
   return (
-    <NavigationContainer>
+    <Provider store={store}>
       <ThemeProvider theme={light}>
-        <AuthStack />
+        <AppRoute />
       </ThemeProvider>
-    </NavigationContainer>
+    </Provider>
   );
 }

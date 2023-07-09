@@ -19,7 +19,7 @@ import {Header} from '@components/Header/Header';
 import Text from '@components/Text/Text';
 import {Feather} from '@expo/vector-icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {FundDetailStackParamList} from '@navigation/home-stack';
+import {FundDetailStackParamList} from '@navigation/homeStack';
 import {Button} from '@components/Button/Button';
 import {Chart} from '@features/home/components/Chart/Chart';
 import {InfoAndStatsContainer} from '@features/home/components/InfoAndStats/infoAndStats.styles';

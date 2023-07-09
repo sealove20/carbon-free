@@ -19,7 +19,6 @@ export function FormInput({
   customStyle,
   secureText = false,
 }: IInput) {
-  console.log(secureText);
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

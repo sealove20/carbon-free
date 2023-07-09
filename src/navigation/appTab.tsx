@@ -2,12 +2,12 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Feather, Fontisto} from '@expo/vector-icons';
 import {Trade} from '@features/home/screens/trade/trade';
 import {Portifolio} from '@features/home/screens/portifolio/portifolio';
-import {HomeStack} from './home-stack';
+import {HomeStack} from './homeStack';
 import {light} from '@themes/light';
 
 const Tab = createBottomTabNavigator();
 
-export function HomeTab() {
+export function AppTab() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -27,7 +27,6 @@ export function HomeTab() {
             focusColor = focused ? light.colors.primary : 'black';
           }
 
-          // You can return any component that you like here!
           return <Feather name={iconName} size={24} color={focusColor} />;
         },
         tabBarActiveTintColor: light.colors.primary,
@@ -37,7 +36,6 @@ export function HomeTab() {
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Trade" component={Trade} />
       <Tab.Screen name="Portifolio" component={Portifolio} />
-      {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
     </Tab.Navigator>
   );
 }
