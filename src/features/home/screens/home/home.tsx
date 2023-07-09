@@ -6,6 +6,7 @@ import {MaterialIcons} from '@expo/vector-icons';
 import {Feather} from '@expo/vector-icons';
 import {
   Account,
+  AccoutValueContainer,
   CarbonCreditTip,
   CarbonCreditTipContent,
   ChartsContainer,
@@ -48,14 +49,14 @@ export function Home({navigation}: Props) {
         <HeaderContainer>
           <Account>
             <AntDesign name="user" size={24} color="black" />
-            <Text customStyle={accountTextStyle}>
-              Account: $1,457.23
+            <AccoutValueContainer>
+              <Text customStyle={accountTextStyle}>Account: $1,457.23</Text>
               <MaterialIcons
                 name="keyboard-arrow-down"
                 size={24}
                 color="black"
               />
-            </Text>
+            </AccoutValueContainer>
             <AntDesign name="bells" size={24} color="black" />
           </Account>
           <Portifolio>

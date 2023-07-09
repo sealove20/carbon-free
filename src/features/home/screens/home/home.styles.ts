@@ -61,6 +61,10 @@ export const CarbonCreditTipContent = styled.View`
   margin: 10px;
 `;
 
+export const AccoutValueContainer = styled.View`
+  flex-direction: row;
+`;
+
 export const portifolioTitle = css`
   font-size: ${({theme}) => theme.space.fontXSmall}px;
 `;
