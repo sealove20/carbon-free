@@ -37,6 +37,7 @@ import WindChart from '@features/home/assets/WindChart';
 import SolarChart from '@features/home/assets/SolarChart';
 import EnergyChart from '@features/home/assets/EnergyChart';
 import BI from '@features/home/assets/BI';
+import {light} from '@themes/light';
 
 interface Props {
   navigation: NativeStackNavigationProp<FundDetailStackParamList, 'Detail'>;
@@ -65,7 +66,11 @@ export function Home({navigation}: Props) {
               <PortifolioValue>
                 <Text customStyle={portifolioValue}>$1,245.23</Text>
                 <Percentage>
-                  <Feather name="arrow-up-right" size={24} color="green" />
+                  <Feather
+                    name="arrow-up-right"
+                    size={20}
+                    color={light.colors.green}
+                  />
                   <Text customStyle={portifolioPercentage}>31.82%</Text>
                 </Percentage>
               </PortifolioValue>
