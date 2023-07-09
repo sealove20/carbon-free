@@ -1,4 +1,5 @@
 import Checkbox from 'expo-checkbox';
+import {Feather} from '@expo/vector-icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   CheckboxContainer,
@@ -6,6 +7,8 @@ import {
   StyledSafeAreaView,
   Title,
   privacyText,
+  HeaderContainer,
+  BackButton,
 } from './signup.styles';
 import {AuthStackParamList} from '@navigation/authStack';
 import {Header} from '@components/Header/Header';
@@ -39,7 +42,13 @@ export function Signup({navigation}: Props) {
   const [isPasswordSecure, setIsPasswordSecure] = useState(true);
   return (
     <StyledSafeAreaView>
-      <Header />
+      <Header>
+        <HeaderContainer>
+          <BackButton onPress={() => navigation.goBack()}>
+            <Feather name="arrow-left" size={24} color="black" />
+          </BackButton>
+        </HeaderContainer>
+      </Header>
       <Title>Create your account</Title>
       <FormContainer>
         <Form.Root customStyle={emailStyle}>
