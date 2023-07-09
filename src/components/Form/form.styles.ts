@@ -1,11 +1,11 @@
 import {styled} from 'styled-components/native';
 import {type RuleSet} from 'styled-components/native/dist/types';
 
-interface RootContainerProps {
+interface CustomStyleProps {
   customStyle?: RuleSet;
 }
 
-export const RootContainer = styled.View<RootContainerProps>`
+export const RootContainer = styled.View<CustomStyleProps>`
   width: 100%;
   ${(props) => props.customStyle}
 `;
@@ -15,13 +15,14 @@ export const TextInput = styled.TextInput.attrs(({theme}) => ({
 }))`
   height: 48px;
   padding: 0 10px;
-  color: ${({theme}) => theme.colors.gray};
+  color: ${({theme}) => theme.colors.black};
   font-size: ${({theme}) => theme.space.fontSmall}px;
   font-family: ${({theme}) => theme.fonts.regular};
 `;
 
-export const InputContainer = styled.View`
+export const InputContainer = styled.View<CustomStyleProps>`
   background-color: ${({theme}) => theme.colors.lightGray};
+  ${(props) => props.customStyle}
 `;
 
 export const KeyboardAvoidingView = styled.KeyboardAvoidingView``;

@@ -7,6 +7,7 @@ import {
   Title,
   emailStyle,
   loginButtonStyle,
+  passwordPlaceholderStyle,
   passwordStyle,
   textStyle,
 } from './login.styles';
@@ -15,34 +16,43 @@ import {AuthStackParamList} from '@navigation/auth-stack';
 import {Header} from '@components/Header/Header';
 import {Form} from '@components/Form';
 import Text from '@components/Text/Text';
+import {useState} from 'react';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Login'>;
 }
 
 export function Login({navigation}: Props) {
+  const [loginValue, setLoginValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [isPasswordSecure, setIsPasswordSecure] = useState(true);
   return (
     <StyledSafeAreaView>
       <Header />
-      <Title onPress={() => navigation.navigate('Signup')}>Login</Title>
+      <Title>Login</Title>
       <FormContainer>
         <Form.Root customStyle={emailStyle}>
           <Form.Label label="E-mail" />
           <Form.Input
-            onChangeText={() => null}
+            onChangeText={setLoginValue}
             placeholder="john@doe.com"
-            value=""
+            value={loginValue}
           />
         </Form.Root>
         <Form.Root customStyle={passwordStyle}>
           <Form.Label label="Password" />
           <InputContainer>
             <Form.Input
-              onChangeText={() => null}
+              onChangeText={setPasswordValue}
               placeholder="Minimum 8 characters"
-              value=""
+              value={passwordValue}
+              customStyle={passwordPlaceholderStyle}
+              secureText={isPasswordSecure}
             />
-            <Form.Icon name="eyeo" size={24} />
+            <Form.Icon
+              secureText={isPasswordSecure}
+              onPress={setIsPasswordSecure}
+            />
           </InputContainer>
         </Form.Root>
         <Button

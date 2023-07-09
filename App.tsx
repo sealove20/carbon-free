@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <ThemeProvider theme={light}>
-        {true ? <HomeTab /> : <AuthStack />}
+        <AuthStack />
       </ThemeProvider>
     </NavigationContainer>
   );

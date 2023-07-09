@@ -14,18 +14,26 @@ import {
   SignupLink,
   emailStyle,
   loginButtonStyle,
+  passwordPlaceholderStyle,
   passwordStyle,
   textStyle,
 } from '../login/login.styles';
 import {Form} from '@components/Form';
 import {Button} from '@components/Button/Button';
 import Text from '@components/Text/Text';
+import {useState} from 'react';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Signup'>;
 }
 
 export function Signup({navigation}: Props) {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [privacy, setPrivacy] = useState(false);
+  const [isPasswordSecure, setIsPasswordSecure] = useState(true);
   return (
     <StyledSafeAreaView>
       <Header />
@@ -33,15 +41,19 @@ export function Signup({navigation}: Props) {
       <FormContainer>
         <Form.Root customStyle={emailStyle}>
           <Form.Label label="First Name" />
-          <Form.Input onChangeText={() => null} placeholder="Joe" value="" />
+          <Form.Input
+            onChangeText={setFirstName}
+            placeholder="Joe"
+            value={firstName}
+          />
         </Form.Root>
         <Form.Root customStyle={passwordStyle}>
           <Form.Label label="Last Name" />
           <InputContainer>
             <Form.Input
-              onChangeText={() => null}
+              onChangeText={setLastName}
               placeholder="Smithh"
-              value=""
+              value={lastName}
             />
           </InputContainer>
         </Form.Root>
@@ -49,9 +61,9 @@ export function Signup({navigation}: Props) {
           <Form.Label label="E-mail" />
           <InputContainer>
             <Form.Input
-              onChangeText={() => null}
+              onChangeText={setEmail}
               placeholder="john@doe.com"
-              value=""
+              value={email}
             />
           </InputContainer>
         </Form.Root>
@@ -59,15 +71,20 @@ export function Signup({navigation}: Props) {
           <Form.Label label="Password" />
           <InputContainer>
             <Form.Input
-              onChangeText={() => null}
+              onChangeText={setPasswordValue}
               placeholder="Minimum 8 characters"
-              value=""
+              value={passwordValue}
+              secureText={isPasswordSecure}
+              customStyle={passwordPlaceholderStyle}
             />
-            <Form.Icon name="eyeo" size={24} />
+            <Form.Icon
+              secureText={isPasswordSecure}
+              onPress={setIsPasswordSecure}
+            />
           </InputContainer>
         </Form.Root>
         <CheckboxContainer>
-          <Checkbox value={false} onValueChange={() => {}} />
+          <Checkbox value={privacy} onValueChange={setPrivacy} />
           <Text customStyle={privacyText} size="fontXSmall">
             I am over 18 years of age and I have read and agree to the Terms of
             Service and Privacy policy.

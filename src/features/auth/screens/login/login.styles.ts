@@ -47,3 +47,7 @@ export const passwordStyle = css`
 export const loginButtonStyle = css`
   margin-top: 37px;
 `;
+
+export const passwordPlaceholderStyle = css`
+  width: 200px;
+`;
